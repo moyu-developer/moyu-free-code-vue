@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import Antd from 'ant-design-vue'
 
 import '@/assets/less/index.less'
+import 'ant-design-vue/dist/antd.css'
 
 import App from './App.vue'
 
@@ -17,7 +18,7 @@ async function bootstrap () {
   setupStore(app)
 
   // 挂载路由
-  await setupRouter(app)
+  setupRouter(app)
 
   // 路由准备就绪后挂载APP实例
   await router.isReady()

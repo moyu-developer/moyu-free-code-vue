@@ -2,7 +2,14 @@ import { App } from 'vue'
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 
 const routes: Array<RouteRecordRaw> = [
-
+  {
+    path: '/',
+    redirect: '/editor',
+  },
+  {
+    path: '/editor',
+    component: () => import('@/views/Editor/index.vue'),
+  },
 ]
 
 export function setupRouter (app: App) {
@@ -12,7 +19,7 @@ export function setupRouter (app: App) {
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
 })
 
 export default router
